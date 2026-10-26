@@ -1,26 +1,44 @@
-# Earth Group Software
+# Earth Group Software website
 
-A buildless static vendor website for Netlify. Edit `index.html` for copy and links, `styles.css` for design, `theme.js` for color mode, and `script.js` for local form behavior. No framework, external fonts, analytics, cookies, or package installation required. The GitHub and HackerOne link icons come from [Simple Icons](https://simpleicons.org/); their names and marks remain the property of their respective owners.
+The source for the [Earth Group Software](https://github.com/earth-group-software) website. It introduces our approach to open-source CMS work, independent security research, and paid development and support.
 
-## Deploy to Netlify
+The site is a static project built with HTML, CSS, and a little JavaScript. It has no framework, build step, analytics, external font service, or runtime dependency.
 
-Upload this folder to Netlify, or commit it to a repository and connect that repository to Netlify. There is no build command. Publish the repository root (`.`); `netlify.toml` configures this for Git deployments. Keep the folder contents at the deployment root.
+## What is here
 
-Enable Netlify form detection in the site's Forms settings and deploy again if necessary. The `project-inquiry` form sends submissions to that site's Netlify Forms inbox. Configure notifications in Netlify if desired. Check your Netlify plan's form availability/limits. Send one test inquiry after deployment and confirm it appears in the Forms inbox before sharing the site. Local preview deliberately does not submit inquiries. Netlify hosting and form activation have not been performed by this deliverable.
+| File | Purpose |
+| --- | --- |
+| `index.html` | Main page, content, navigation, and Netlify inquiry form |
+| `styles.css` | Layout, responsive styles, and light/dark colors |
+| `theme.js` | Theme preference, saved in the visitor's browser |
+| `script.js` | Local form preview notice |
+| `thanks.html` | Confirmation page after a Netlify form submission |
+| `netlify.toml` | Publish directory and response headers |
 
-## Content and launch notes
+## Run locally
 
-- Organization link supplied by the owner: https://github.com/earth-group-software
-- Research identity supplied by the owner: https://hackerone.com/dogeshark
-- Experience with Concrete CMS and ExpressionEngine is based on the owner's account. Their program acknowledgement pages are linked for visitors. Direct HackerOne profile extraction was unavailable during creation; exact report counts, CVEs, ratings, and patch versions are intentionally omitted.
-- Open-source releases are described as a commitment. No unreleased project is presented as an available download. Add repository-specific licenses and documentation as projects ship.
-- No license is selected for the owner's plugins, themes, or this website. Choose and add an appropriate license before publishing source intended for reuse.
-- Services are proposed positioning based on the requested vendor model. Confirm the offered services and wording before a public launch.
-- The inquiry form explains its purpose and Netlify processing. Update privacy/retention details to match the actual business operation before collecting real inquiries.
-- No implied affiliation with or endorsement by CMS vendors, HackerOne, or Automattic.
+Clone this repository and serve its root directory:
 
-## Local preview
+```sh
+python -m http.server 4173 --bind 127.0.0.1
+```
 
-From this directory: `python -m http.server 4173 --bind 127.0.0.1`
+Open <http://127.0.0.1:4173>. The inquiry form shows a preview notice locally; it does not send a message.
 
-Open http://127.0.0.1:4173. The site works as plain static files; clean root URLs assume deployment at a domain root.
+## Deploy on Netlify
+
+Connect this repository to a Netlify site. Leave the build command empty and publish the repository root (`.`). The `netlify.toml` file records that setup.
+
+Enable Netlify Forms and deploy the site. Then send a test inquiry and confirm it reaches the site's Forms inbox. You can configure email notifications in Netlify. No Netlify deployment is connected to this repository yet.
+
+## Research and open source
+
+The website links to [Dogeshark's HackerOne profile](https://hackerone.com/dogeshark) and the public acknowledgement pages for Concrete CMS and ExpressionEngine. It does not publish undisclosed vulnerability details or claim endorsement by those vendors.
+
+Plugins and themes will appear under the [Earth Group Software organization](https://github.com/earth-group-software) as they are released. This repository contains the website only.
+
+## Icons and reuse
+
+The GitHub and HackerOne link marks come from [Simple Icons](https://simpleicons.org/). Those names and marks belong to their respective owners.
+
+This repository does not yet have a source license. Its code is publicly visible, but a reuse license has not been granted. A license can be added once the intended reuse terms are chosen.
