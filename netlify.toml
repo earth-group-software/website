@@ -8,4 +8,4 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
     X-Frame-Options = "DENY"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; object-src 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://forminit.com; style-src 'self'; img-src 'self' data:; connect-src 'self' https://forminit.com; form-action 'self' https://forminit.com; base-uri 'self'; frame-ancestors 'none'; object-src 'none'"
