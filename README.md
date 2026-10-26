@@ -8,11 +8,11 @@ The site is a static project built with HTML, CSS, and a little JavaScript. It h
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Main page, content, navigation, and Netlify inquiry form |
+| `index.html` | Main page, content, navigation, and Forminit inquiry form |
 | `styles.css` | Layout, responsive styles, and light/dark colors |
 | `theme.js` | Theme preference, saved in the visitor's browser |
-| `script.js` | Local form preview notice |
-| `thanks.html` | Confirmation page after a Netlify form submission |
+| `script.js` | Forminit submission, validation feedback, and submit state |
+| `thanks.html` | Legacy static confirmation page; not used by the current form |
 | `netlify.toml` | Publish directory and response headers |
 
 ## Run locally
@@ -23,11 +23,11 @@ Clone this repository and serve its root directory:
 python -m http.server 4173 --bind 127.0.0.1
 ```
 
-Open <http://127.0.0.1:4173>. The inquiry form shows a preview notice locally; it does not send a message.
+Open <http://127.0.0.1:4173>. The inquiry form requires the Forminit SDK and a network connection to submit.
 
 ## Deploy on Netlify
 
-Connect this repository to a Netlify site. Leave the build command empty and publish the repository root (`.`). The `netlify.toml` file records that setup.
+Connect this repository to a Netlify site. Leave the build command empty and publish the repository root (`.`). The `netlify.toml` file records that setup and permits the Forminit SDK and API.
 
 The inquiry form sends submissions to [Forminit](https://forminit.com) using Form ID `r1fcmjiuxjj`. Netlify only serves the static site. After deployment, send one test inquiry and confirm it appears in your Forminit inbox at <https://app.forminit.com>.
 
